@@ -1,0 +1,17 @@
+- Synchronise with main remote branch
+
+0.  git switch main
+0.1 git pull
+
+0.2  git switch στο δικό σου branch
+(0.3 git status)
+0.4 git merge origin/main
+
+1. git status
+1.1 γράψε κώδικα...
+2. Είτε git add . (κάνει add τα πάντα) είτε git add filename (για να κάνει μόνο το filename)
+2.1 git status
+3. git commit -m "description of the changes etc."
+3.1 git status
+
+Εκκρεμεί το workflow με τα pull request
