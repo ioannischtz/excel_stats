@@ -14,4 +14,10 @@
 3. git commit -m "description of the changes etc."
 3.1 git status
 
-Εκκρεμεί το workflow με τα pull request
+4. do a pull request
+
+
+(Αν θες να κάνεις κάποιο άλλο, καινούριο feature branch):
+
+1. git checkout -b new_feature_branch
+2. git push -u origin new_feature_branch (Για να ανέβει και online)
