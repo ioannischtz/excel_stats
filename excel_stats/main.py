@@ -1,5 +1,10 @@
 # ---- Open excel sheet ----
 
+from openpyxl import load_workbook
+wb = load_workbook(filename = '.\data\datasheet.xlsx')
+sheet_ranges = wb['Sheet1']
+print(sheet_ranges['C2'].value)
+
 # ---- perform statistical analysis ----
 
 # 1 Location
@@ -28,3 +33,4 @@
 # ---- Visualize the results ----
 
 # ---- Save the results to a file ----
+
