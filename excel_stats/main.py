@@ -1,5 +1,4 @@
 # ---- Open excel sheet ----
-from ctypes import sizeof
 from openpyxl import load_workbook
 wb = load_workbook(filename='./data/soundnames-LTM coordinates.xlsx')
 sheet = wb.active
@@ -33,12 +32,26 @@ for i, col_name in enumerate(col_names):
     data_dict[col_name] = [row[i] for row in data]
 
 # print(col_names[1],data_dict[col_names[1]])
-print('id:', data_dict['id'])
-print('instrument:', data_dict['instrument'])
-print('T:', data_dict['T'])
-print('L:', data_dict['L'])
-print('M', data_dict['M'])
+# print('id:', data_dict['id'])
+# print('instrument:', data_dict['instrument'])
+# print('T:', data_dict['T'])
+# print('L:', data_dict['L'])
+# print('M', data_dict['M'])
 
+# !!! ------- PIO EASY TROPOS ------ !!!
+
+data_dict2 = {}
+for column in sheet.iter_cols(values_only=True):
+    # column[0] einai i prwti grammi tou column , diladi to onoma
+    data_dict2[column[0]] = column[1:]
+    # a[start:stop]  # items start through stop-1
+    # a[start:]      # items start through the rest of the array
+    # a[:stop]       # items from the beginning through stop-1
+    # a[:]           # a copy of the whole array
+
+
+# print(data_dict2)
+print('instrument:', data_dict2['instrument'])
 # ---- perform statistical analysis ----
 
 # 1 Location
