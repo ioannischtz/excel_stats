@@ -29,4 +29,3 @@ def extractExceldata(inputfile):
     for i, col_name in enumerate(col_names):
         data_dict[col_name] = [row[i] for row in data]
     return (col_names, data_dict)
-#lsdasd
