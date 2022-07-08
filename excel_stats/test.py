@@ -1,3 +1,5 @@
+
+
 def excel_file():
     from openpyxl import load_workbook
     wb = load_workbook(filename=input(
@@ -15,6 +17,6 @@ def excel_file():
     return (col_names, data_dict)
 
 
-col_names, data_dict = excel_file()
-print("\nThe excel file contains the following columns:\n", col_names,
-      "\nThis is the whole excel file in a dictionary:\n", data_dict)
+list1, dict1 = excel_file()
+print("\nThe excel file contains the following columns:\n", list1,
+      "\nThis is the whole excel file in a dictionary:\n", dict1)
