@@ -1,10 +1,57 @@
 # ---- Open excel sheet ----
-
 from openpyxl import load_workbook
-wb = load_workbook(filename = '.\data\datasheet.xlsx')
-sheet_ranges = wb['Sheet1']
-print(sheet_ranges['C2'].value)
+wb = load_workbook(filename='./data/soundnames-LTM coordinates.xlsx')
+sheet = wb.active
 
+for names in sheet.iter_rows(min_row=1,
+                             max_row=1,
+                             values_only=True):
+    col_names = names
+
+# print(col_names)
+
+
+# x = [[0 for i in range(10)] for j in range(10)]
+# # x is now a 10x10 array of 'foo' (which can depend on i and j if you want)
+# print(x)
+
+data = [[0 for i in range(1, sheet.max_column + 1)]
+        for j in range(2, sheet.max_row + 1)]
+
+# print(len(data), len(data[0]))
+
+for row_i in range(2, sheet.max_row + 1):
+    for col_i in range(1, sheet.max_column + 1):
+        data[row_i-2][col_i-1] = sheet.cell(row=row_i, column=col_i).value
+
+# print(data)
+
+data_dict = {}  # create an empty dictionary
+
+for i, col_name in enumerate(col_names):
+    data_dict[col_name] = [row[i] for row in data]
+
+# print(col_names[1],data_dict[col_names[1]])
+# print('id:', data_dict['id'])
+# print('instrument:', data_dict['instrument'])
+# print('T:', data_dict['T'])
+# print('L:', data_dict['L'])
+# print('M', data_dict['M'])
+
+# !!! ------- PIO EASY TROPOS ------ !!!
+
+data_dict2 = {}
+for column in sheet.iter_cols(values_only=True):
+    # column[0] einai i prwti grammi tou column , diladi to onoma
+    data_dict2[column[0]] = column[1:]
+    # a[start:stop]  # items start through stop-1
+    # a[start:]      # items start through the rest of the array
+    # a[:stop]       # items from the beginning through stop-1
+    # a[:]           # a copy of the whole array
+
+
+# print(data_dict2)
+print('instrument:', data_dict2['instrument'])
 # ---- perform statistical analysis ----
 
 # 1 Location
@@ -33,4 +80,3 @@ print(sheet_ranges['C2'].value)
 # ---- Visualize the results ----
 
 # ---- Save the results to a file ----
-
