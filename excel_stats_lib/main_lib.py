@@ -37,8 +37,7 @@ def arithMean_col(columnName, col_names, data_list_columns):
 
 #testing lines
 col_names, *_, data_list_columns = extractExceldata(inputfile)
-arithMean_col("T", col_names, data_list_columns)
-print(arithMean_col("T", col_names, data_list_columns))
+print(arithMean_col("L", col_names, data_list_columns))
 
 
 # 1.2 median
