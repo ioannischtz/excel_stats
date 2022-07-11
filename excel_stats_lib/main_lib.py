@@ -7,26 +7,38 @@ inputfile = "E:\DEV\excel_stats\data\soundnames-LTM coordinates.xlsx"
 def extractExceldata(inputfile):
     wb = load_workbook(filename=inputfile)
     sheet = wb.active
-    max_r = sheet.max_row
-    max_c = sheet.max_column
     for names in sheet.iter_rows(min_row=1,
                                  max_row=1,
                                  values_only=True):
         col_names = names
-    data = [[sheet.cell(row=i, column=j).value for j in range(
-            1, sheet.max_column+1)] for i in range(2, sheet.max_row+1)]
+
+    data_list_rows = [[sheet.cell(row=i, column=j).value for j in range(
+        1, sheet.max_column+1)] for i in range(2, sheet.max_row+1)]
+
+    data_list_columns = [[sheet.cell(row=i, column=j).value for i in range(
+        2, sheet.max_row+1)] for j in range(1, sheet.max_column+1)]
+
     data_dict = {}
     for i, col_name in enumerate(col_names):
-        data_dict[col_name] = [row[i] for row in data]
-    return (col_names, data_dict, max_r, max_c)
+        data_dict[col_name] = [row[i] for row in data_list_rows]
+
+    return (col_names, data_dict, data_list_rows, data_list_columns)
 
 
 # 1 Location
 # 1.1 Arithmetic Mean
 
 
-def arMean_col_i(columnName):
-    col_names, data_dict, max_r, max_c = extractExceldata(inputfile)
-    col_num = col_names.index(columnName)
-    x = sum(data_dict[col_names[col_num]])/(max_r-1)
-    print("The arithmetic mean of column '", columnName, "' is: ", x)
+def arithMean_col(columnName, col_names, data_list_columns):
+    col_name = col_names.index(columnName)
+    max_r = len(data_list_columns[col_name])
+    mean = sum(data_list_columns[col_name])/(max_r-1)
+    return mean
+
+#testing lines
+col_names, *_, data_list_columns = extractExceldata(inputfile)
+arithMean_col("T", col_names, data_list_columns)
+print(arithMean_col("T", col_names, data_list_columns))
+
+
+# 1.2 median
