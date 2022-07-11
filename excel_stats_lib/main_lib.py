@@ -35,9 +35,21 @@ def arithMean_col(columnName, col_names, data_list_columns):
     mean = sum(data_list_columns[col_name])/(max_r-1)
     return mean
 
-#testing lines
-col_names, *_, data_list_columns = extractExceldata(inputfile)
-print(arithMean_col("L", col_names, data_list_columns))
-
-
 # 1.2 median
+
+
+def median(columnName, col_names, data_list_columns):
+    col_name = col_names.index(columnName)
+    sortedList = data_list_columns[col_name]
+    sortedList.sort()
+    m = len(sortedList)
+    if m % 2 == 0:
+        med = (sortedList[int(m/2-1)]+sortedList[int(m/2)])/2
+    elif m % 2 == 1:
+        med = (sortedList[int(m/2)])
+
+    return med
+
+
+col_names, *_, data_list_columns = extractExceldata(inputfile)
+print(median("T", col_names, data_list_columns))
