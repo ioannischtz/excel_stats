@@ -1,22 +1,26 @@
+# 1.3 mode
+def unique(list1):
+ 
+    # initialize a null list
+    unique_list = []
+ 
+    # traverse for all elements
+    for x in list1:
+        # check if exists in unique_list or not
+        if x not in unique_list:
+            unique_list.append(x)
+    return unique_list
 
-
-def excel_file():
-    from openpyxl import load_workbook
-    wb = load_workbook(filename=input(
-        "Please enter the excel file directory!\n"))
-    sheet = wb.active
-    for names in sheet.iter_rows(min_row=1,
-                                 max_row=1,
-                                 values_only=True):
-        col_names = names
-    data = [[sheet.cell(row=i, column=j).value for j in range(
-            1, sheet.max_column+1)] for i in range(2, sheet.max_row+1)]
-    data_dict = {}
-    for i, col_name in enumerate(col_names):
-        data_dict[col_name] = [row[i] for row in data]
-    return (col_names, data_dict)
-
-
-list1, dict1 = excel_file()
-print("\nThe excel file contains the following columns:\n", list1,
-      "\nThis is the whole excel file in a dictionary:\n", dict1)
+def stat_mode(list1):
+    unique_list = unique(list1)
+    unXindex = [0 for x in range(0, len(unique_list))]
+    for x in list1:
+        for index,ux in enumerate(unique_list):
+            if x == ux:
+                unXindex[index] += 1
+    mode_i = max(unXindex)
+    mode_index = unXindex.index(mode_i)
+    mode = unique_list[mode_index]
+    return mode
+qwerty = ["takis", "mitsos", "mitsos", "nikos"]
+print(stat_mode(qwerty))

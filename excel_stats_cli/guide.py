@@ -58,6 +58,7 @@ print('instrument:', data_dict2['instrument'])
 # 1.1 arithmetic mean
 # 1.2 median
 # 1.3 mode
+
 # 1.4 interquartile mean
 
 # 2 Spread
