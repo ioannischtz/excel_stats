@@ -78,3 +78,4 @@ def stat_mode(columnName, col_names, data_list_columns):
     mode_index = max(unXindex)
     mode = unique_list[mode_index]
     return mode
+
