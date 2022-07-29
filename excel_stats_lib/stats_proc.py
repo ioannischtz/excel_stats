@@ -1,30 +1,3 @@
-# ---- Open excel sheet ----
-from openpyxl import load_workbook
-# File path to test the code: E:\DEV\excel_stats\data\soundnames-LTM coordinates.xlsx
-inputfile = "E:\DEV\excel_stats\data\soundnames-LTM coordinates.xlsx"
-
-
-def extractExceldata(inputfile):
-    wb = load_workbook(filename=inputfile)
-    sheet = wb.active
-    for names in sheet.iter_rows(min_row=1,
-                                 max_row=1,
-                                 values_only=True):
-        col_names = names
-
-    data_list_rows = [[sheet.cell(row=i, column=j).value for j in range(
-        1, sheet.max_column+1)] for i in range(2, sheet.max_row+1)]
-
-    data_list_columns = [[sheet.cell(row=i, column=j).value for i in range(
-        2, sheet.max_row+1)] for j in range(1, sheet.max_column+1)]
-
-    data_dict = {}
-    for i, col_name in enumerate(col_names):
-        data_dict[col_name] = [row[i] for row in data_list_rows]
-
-    return (col_names, data_dict, data_list_rows, data_list_columns)
-
-
 # 1 Location
 # 1.1 Arithmetic Mean
 
@@ -53,13 +26,13 @@ def median(columnName, col_names, data_list_columns):
 
 
 # 1.3 mode
-def unique(list1):
+def unique(in_list):
 
     # initialize a null list
     unique_list = []
 
     # traverse for all elements
-    for x in list1:
+    for x in in_list:
         # check if exists in unique_list or not
         if x not in unique_list:
             unique_list.append(x)
@@ -68,14 +41,13 @@ def unique(list1):
 
 def stat_mode(columnName, col_names, data_list_columns):
     col_name = col_names.index(columnName)
-    list1 = data_list_columns[col_name]
-    unique_list = unique(list1)
+    in_list = data_list_columns[col_name]
+    unique_list = unique(in_list)
     unXindex = [0 for x in range(0, len(unique_list))]
-    for x in list1:
+    for x in in_list:
         for index, ux in enumerate(unique_list):
             if x == ux:
                 unXindex[index] += 1
     mode_index = max(unXindex)
     mode = unique_list[mode_index]
     return mode
-
