@@ -2,7 +2,7 @@ import pytest
 import excel_utilities as eu
 import stats_proc as sp
 
-inputfile = "E:\DEV\excel_stats\data\soundnames-LTM coordinates.xlsx"
+inputfile = "E:\DEV\excel_stats\data\pytestfile.xlsx"
 sheet = eu.getExcelSheet(inputfile)
 
 test_getSheetNames = [
@@ -25,10 +25,17 @@ def test_getSheetNames(arguments, expected_output, fail_message):
     actual = eu.getSheetNames(*arguments)
     assert actual == expected_output, fail_message
 
+test_getDataList = [
+    pytest.param(
+        (sheet, False),
+        [
+    )
+]
 
-# def test_getDataList(arguments, expected_output, fail_message):
-#     actual = eu.getDataList(*arguments)
-#     assert actual == expected_output, fail_message
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_getDataList)
+def test_getDataList(arguments, expected_output, fail_message):
+    actual = eu.getDataList(*arguments)
+    assert actual == expected_output, fail_message
 
 
 # def test_getDataDict(arguments, expected_output, fail_message):

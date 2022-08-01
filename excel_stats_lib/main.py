@@ -11,7 +11,7 @@ col_names = eu.getSheetNames(sheet)
 row_names = eu.getSheetNames(sheet, True)
 
 data_list_col = eu.getDataList(sheet)
-
+print((data_list_col))
 data_list_row = eu.getDataList(sheet, True)
 
 data_dict = eu.getDataDict(sheet, col_names, data_list_row)
