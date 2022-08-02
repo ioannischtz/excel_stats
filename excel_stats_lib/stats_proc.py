@@ -5,7 +5,7 @@
 def arithMean_col(columnName, col_names, data_list_columns):
     col_name = col_names.index(columnName)
     max_r = len(data_list_columns[col_name])
-    mean = sum(data_list_columns[col_name])/(max_r-1)
+    mean = sum(data_list_columns[col_name])/(max_r)
 
     return mean
 
@@ -48,6 +48,7 @@ def stat_mode(columnName, col_names, data_list_columns):
         for index, ux in enumerate(unique_list):
             if x == ux:
                 unXindex[index] += 1
+    print(unique_list, unXindex)
     mode_index = max(unXindex)
     mode = unique_list[mode_index]
     return mode
