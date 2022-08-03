@@ -21,12 +21,13 @@ data_list_row = eu.getDataList(sheet, True)
 # print(data_list_row)
 
 data_dict = eu.getDataDict(sheet, col_names, data_list_row)
-print(data_dict)
+# print(data_dict)
 
 mean = sp.arithMean_col('LENGTH', col_names, data_list_col)
-
+# print(mean)
 
 median = sp.median('LENGTH', col_names, data_list_col)
-
+# print(median)
 
 stat_mode = sp.stat_mode('LENGTH', col_names, data_list_col)
+print(stat_mode)

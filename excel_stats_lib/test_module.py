@@ -82,26 +82,70 @@ test_getDataDict = [
 ]
 
 
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_getDataDict)
 def test_getDataDict(arguments, expected_output, fail_message):
     actual = eu.getDataDict(*arguments)
     assert actual == expected_output, fail_message
 
 
-# def test_arithMean_col(arguments, expected_output, fail_message):
-#     actual = sp.arithMean_col(*arguments)
-#     assert actual == expected_output, fail_message
+test_arithMean_col = [
+    pytest.param(
+        ("LENGTH",
+         ('ID', 'OBJECT', 'HEIGHT', 'LENGTH', 'WIDTH'),
+         [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+          ['ob1', 'ob2', 'ob3', 'ob4', 'ob5', 'ob6', 'ob7', 'ob8', 'ob9', 'ob10'],
+          [2, 3, 6, 5, 8, 2, 1, 3, 2, 6],
+          [3, 1, 2, 6, 1, 4, 5, 5, 9, 4],
+          [4, 6, 4, 1, 6, 7, 4, 2, 1, 5]]),
+        4.0,
+        'Expected different output when calling "test_arithMean_col()" with LENGTH as input',
+        id='test_arithMean_col')
+]
 
 
-# def test_median(arguments, expected_output, fail_message):
-#     actual = sp.median(*arguments)
-#     assert actual == expected_output, fail_message
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_arithMean_col)
+def test_arithMean_col(arguments, expected_output, fail_message):
+    actual = sp.arithMean_col(*arguments)
+    assert actual == expected_output, fail_message
 
 
-# def test_unique(arguments, expected_output, fail_message):
-#     actual = sp.unique(*arguments)
-#     assert actual == expected_output, fail_message
+test_median = [
+    pytest.param(
+        ("LENGTH",
+         ('ID', 'OBJECT', 'HEIGHT', 'LENGTH', 'WIDTH'),
+         [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+          ['ob1', 'ob2', 'ob3', 'ob4', 'ob5', 'ob6', 'ob7', 'ob8', 'ob9', 'ob10'],
+          [2, 3, 6, 5, 8, 2, 1, 3, 2, 6],
+          [3, 1, 2, 6, 1, 4, 5, 5, 9, 4],
+          [4, 6, 4, 1, 6, 7, 4, 2, 1, 5]]),
+        4.0,
+        'Expected different output when calling "test_median()" with LENGTH as input',
+        id='test_median')
+]
 
 
-# def test_mode(arguments, expected_output, fail_message):
-#     actual = sp.mode(*arguments)
-#     assert actual == expected_output, fail_message
+@pytest.mark.parametrize('arguments,expected_output,fail_message', test_median)
+def test_median(arguments, expected_output, fail_message):
+    actual = sp.median(*arguments)
+    assert actual == expected_output, fail_message
+
+
+test_stat_mode = [
+    pytest.param(
+        ("LENGTH",
+         ('ID', 'OBJECT', 'HEIGHT', 'LENGTH', 'WIDTH'),
+         [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+          ['ob1', 'ob2', 'ob3', 'ob4', 'ob5', 'ob6', 'ob7', 'ob8', 'ob9', 'ob10'],
+          [2, 3, 6, 5, 8, 2, 1, 3, 2, 6],
+          [3, 1, 2, 6, 1, 4, 5, 5, 9, 4],
+          [4, 6, 4, 1, 6, 7, 4, 2, 1, 5]]),
+        [1, 4, 5],
+        'Expected different output when calling "test_stat_mode()" with LENGTH as input',
+        id='test_stat_mode')
+]
+
+
+@pytest.mark.parametrize('arguments, expected_output, fail_message', test_stat_mode)
+def test_stat_mode(arguments, expected_output, fail_message):
+    actual = sp.stat_mode(*arguments)
+    assert actual == expected_output, fail_message

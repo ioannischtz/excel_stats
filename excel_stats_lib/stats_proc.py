@@ -5,7 +5,7 @@
 def arithMean_col(columnName, col_names, data_list_columns):
     col_name = col_names.index(columnName)
     max_r = len(data_list_columns[col_name])
-    mean = sum(data_list_columns[col_name])/(max_r-1)
+    mean = sum(data_list_columns[col_name])/(max_r)
 
     return mean
 
@@ -28,18 +28,16 @@ def median(columnName, col_names, data_list_columns):
 # 1.3 mode
 def unique(in_list):
 
-    # initialize a null list
     unique_list = []
 
-    # traverse for all elements
     for x in in_list:
-        # check if exists in unique_list or not
         if x not in unique_list:
             unique_list.append(x)
     return unique_list
 
 
 def stat_mode(columnName, col_names, data_list_columns):
+    mode = []
     col_name = col_names.index(columnName)
     in_list = data_list_columns[col_name]
     unique_list = unique(in_list)
@@ -48,6 +46,9 @@ def stat_mode(columnName, col_names, data_list_columns):
         for index, ux in enumerate(unique_list):
             if x == ux:
                 unXindex[index] += 1
-    mode_index = max(unXindex)
-    mode = unique_list[mode_index]
+    position = 0
+    for x in unXindex:
+        if x == max(unXindex):
+            mode.append(unique_list[position])
+        position += 1
     return mode
