@@ -1,0 +1,28 @@
+.. _excel_utilities.getSheetNames:
+
+excel_utilities.getSheetNames
+-----------------------------
+
+To retrieve a tuple containting the column names (default, use b_rows=True to retrieve the row names instead) 
+of the specified excel spreadsheet you can use the ``excel_utilities.getSheetNames()`` function:
+
+.. py:function::  excel_utilities.getSheetNames(sheet, b_rows=False)
+
+    Return a tuple of column names as strings
+
+    :param sheet: Required excel spreadsheet.
+    :type sheet: <class 'openpyxl.worksheet.worksheet.Worksheet'>
+    :raise excel_utilities.InvalidSheetError: If the sheet argument is an invalid type.
+    :param b_rows: Optional, set to True in order to return row names instead.
+    :type b_rows: Boolean
+    :return: The column names tuple.
+    :rtype: tuple(str)
+
+| The sheet parameter should be retrieved using the excel_utilities.getExcelSheet().
+| Otherwise, :py:func:`excel_utilities.getSheetNames` will raise an exception.
+
+.. py:exception:: excel_utilities.InvalidSheetError
+    
+    Raised if the sheet argument is an invalid type. 
+    *openpyxl does not support  file format, please check you can open it with Excel first.
+    Supported formats are: .xlsx,.xlsm,.xltx,.xltm*

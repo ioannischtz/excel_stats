@@ -6,7 +6,7 @@
 Welcome to EXCEL_STATS's documentation!
 =======================================
 
-**EXCEL_STATS** is a simple project to become more familiar with python. 
+**EXCEL_STATS** is a simple project to familiarize ourselves with Python. 
 Retrieve data from excel sheets, perform statistical analysis 
 and visualize the results.
 
@@ -18,11 +18,12 @@ and visualize the results.
    This project is under active development.   
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    
+
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
@@ -32,6 +33,6 @@ Contents
 --------
 
 .. toctree::
-
+   
    usage
    reference

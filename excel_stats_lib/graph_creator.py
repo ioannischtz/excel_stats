@@ -1,12 +1,15 @@
 import matplotlib.pyplot as plt
-import main_lib as mlib
+import excel_utilities as eu
 import math
 
 
 def graph_creator_func(inputfile):
     # Link with the excel file
-    col_names, data_dict, data_list_rows, data_list_columns = mlib.extractExceldata(
-        inputfile)
+    sheet = eu.getExcelSheet(inputfile)
+    col_names = eu.getSheetNames(sheet)
+    data_list_rows = eu.getDataList(sheet, b_rows=True)
+    data_list_columns = eu.getDataList(sheet)
+    data_dict = eu.getDataDict(sheet, col_names, data_list_rows)
 
     # Calculating the dimentions of the subplot matrix
     multitude = len(data_list_columns[1])
@@ -56,4 +59,5 @@ def graph_creator_func(inputfile):
 
 
 # Calling the function test
-graph_creator_func("E:\DEV\excel_stats\data\soundnames-LTM coordinates.xlsx")
+# inputfile = 'E:\DEV\excel_stats\data\pytestfile.xlsx'
+# graph_creator_func("E:\DEV\excel_stats\data\pytestfile.xlsx")
