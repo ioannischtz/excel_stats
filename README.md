@@ -5,5 +5,5 @@ TODO:
 - [x] Create a basic statistical analysis library
 - [x] Use the matplotlib library for visualization
 - [x] Clean-up / Code-refactor
-- [ ] Write documentation using Sphinx
+- [x] Write documentation using Sphinx
 
