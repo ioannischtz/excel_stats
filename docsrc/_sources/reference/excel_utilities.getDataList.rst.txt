@@ -1,0 +1,29 @@
+.. _excel_utilities.getDataList:
+
+excel_utilities.getDataList
+---------------------------
+
+To etrieve a list of lists. Each sublist containts the values, provided by the specified excel spreadsheet, 
+of each column (default, use b_rows=True to retrieve values of rows instead). 
+
+.. note:: 
+
+    The first value of each column is scipped due to being the column name. You can 
+    retrieve column names using the :ref:`excel_utilities.getSheetNames <excel_utilities.getSheetNames>` function. 
+
+.. py:function:: excel_utilities.getDataList(sheet, b_rows=False)
+
+    Return a list of columns
+
+    :param sheet: Required excel spreadsheet.
+    :type sheet: <class 'openpyxl.worksheet.worksheet.Worksheet'>
+    :raise excel_utilities.InvalidSheetError: If the sheet argument is an invalid type.
+    :param b_rows: Optional, set to True in order to retrieve lists of rows instead of columns.
+    :type b_rows: Boolean
+    :return: A list of lists
+    :rtype: list()
+
+| The sheet parameter should be retrieved using the excel_utilities.getExcelSheet().
+| Otherwise, :py:func:`excel_utilities.getDataList <excel_utilities.getDataList>` will raise an exception.
+
+
