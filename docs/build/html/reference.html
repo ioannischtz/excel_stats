@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Usage" href="usage.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="&lt;no title&gt;" href="tutorial.html" /><link rel="prev" title="Usage" href="usage.html" />
 
     <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
         <title>Reference - EXCEL_STATS 0.1 documentation</title>
@@ -192,10 +192,32 @@
         <article role="main">
           <section id="reference">
 <h1>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h1>
+<span class="target" id="excel-utilities-getexcelsheet"></span><dl class="py function">
+<dt class="sig sig-object py" id="excel_utilities.getExcelSheet">
+<span class="sig-prename descclassname"><span class="pre">excel_utilities.</span></span><span class="sig-name descname"><span class="pre">getExcelSheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#excel_utilities.getExcelSheet" title="Permalink to this definition">#</a></dt>
+<dd><p>Retrieves data from an excel file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>inputfile</strong> – The excel file you want to retriece data from.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>sheet</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>&lt;class ‘openpyxl.worksheet.worksheet.Worksheet’&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The getExcelSheet function is used to retrieve data form an excel file. In order to do so, the
+<a class="reference external" href="https://openpyxl.readthedocs.io">openpyxl library</a> is used!</p>
+</div>
 <section id="excel-utilities-getsheetnames">
 <span id="id1"></span><h2>excel_utilities.getSheetNames<a class="headerlink" href="#excel-utilities-getsheetnames" title="Permalink to this heading">#</a></h2>
 <p>To retrieve a tuple containting the column names (default, use b_rows=True to retrieve the row names instead)
-of the specified excel spreadsheet you can use the <code class="docutils literal notranslate"><span class="pre">excel_utilities.getSheetNames()</span></code> function:</p>
+of the specified excel spreadsheet you can use the excel_utilities.getSheetNames function:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="excel_utilities.getSheetNames">
 <span class="sig-prename descclassname"><span class="pre">excel_utilities.</span></span><span class="sig-name descname"><span class="pre">getSheetNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#excel_utilities.getSheetNames" title="Permalink to this definition">#</a></dt>
@@ -220,7 +242,7 @@ of the specified excel spreadsheet you can use the <code class="docutils literal
 </dd></dl>
 
 <div class="line-block">
-<div class="line">The sheet parameter should be retrieved using the excel_utilities.getExcelSheet().</div>
+<div class="line">The sheet parameter should be retrieved using the <a class="reference internal" href="#excel-utilities-getexcelsheet"><span class="std std-ref">excel_utilities.getExcelSheet</span></a>.</div>
 <div class="line">Otherwise, <a class="reference internal" href="#excel_utilities.getSheetNames" title="excel_utilities.getSheetNames"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getSheetNames()</span></code></a> will raise an exception.</div>
 </div>
 <dl class="py exception">
@@ -265,7 +287,7 @@ retrieve column names using the <a class="reference internal" href="#excel-utili
 </dd></dl>
 
 <div class="line-block">
-<div class="line">The sheet parameter should be retrieved using the excel_utilities.getExcelSheet().</div>
+<div class="line">The sheet parameter should be retrieved using the <a class="reference internal" href="#excel-utilities-getexcelsheet"><span class="std std-ref">excel_utilities.getExcelSheet</span></a>.</div>
 <div class="line">Otherwise, <a class="reference internal" href="#excel_utilities.getDataList" title="excel_utilities.getDataList"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getDataList</span></code></a> will raise an exception.</div>
 </div>
 </section>
@@ -296,7 +318,10 @@ retrieve column names using the <a class="reference internal" href="#excel-utili
 </dl>
 </dd></dl>
 
-<span class="target" id="stats-proc-arithmean-col"></span><dl class="py function">
+</section>
+<section id="stats-proc-arithmean-col">
+<h2>stats_proc.arithMean_col<a class="headerlink" href="#stats-proc-arithmean-col" title="Permalink to this heading">#</a></h2>
+<span class="target" id="id4"></span><dl class="py function">
 <dt class="sig sig-object py" id="stats_proc.arithMean_col">
 <span class="sig-prename descclassname"><span class="pre">stats_proc.</span></span><span class="sig-name descname"><span class="pre">arithMean_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columnName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_list_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stats_proc.arithMean_col" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the arithmetic of a list.</p>
@@ -317,7 +342,10 @@ retrieve column names using the <a class="reference internal" href="#excel-utili
 </dl>
 </dd></dl>
 
-<span class="target" id="stats-proc-median"></span><dl class="py function">
+</section>
+<section id="stats-proc-median">
+<h2>stats_proc.median<a class="headerlink" href="#stats-proc-median" title="Permalink to this heading">#</a></h2>
+<span class="target" id="id5"></span><dl class="py function">
 <dt class="sig sig-object py" id="stats_proc.median">
 <span class="sig-prename descclassname"><span class="pre">stats_proc.</span></span><span class="sig-name descname"><span class="pre">median</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columnName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_list_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stats_proc.median" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the median of a list</p>
@@ -325,8 +353,8 @@ retrieve column names using the <a class="reference internal" href="#excel-utili
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>columnName</strong> (<em>str</em>) – The name of the column of which the function computes the median.</p></li>
-<li><p><strong>col_names</strong> (<em>tuple</em><em>(</em><em>str</em><em>)</em>) – The name of each column. Can be retrived using the <a class="reference internal" href="#excel_utilities.getSheetNames" title="excel_utilities.getSheetNames"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getSheetNames()</span></code></a> function.</p></li>
-<li><p><strong>data_list_columns</strong> (<em>list</em><em>(</em><em>)</em>) – The values of the columns, besides the first row which contains the column names. Can be retrieved using the <a class="reference internal" href="#excel_utilities.getDataList" title="excel_utilities.getDataList"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getDataList()</span></code></a> function.</p></li>
+<li><p><strong>col_names</strong> (<em>tuple</em><em>(</em><em>str</em><em>)</em>) – The name of each column. Can be retrived using the <a class="reference internal" href="#excel-utilities-getsheetnames"><span class="std std-ref">excel_utilities.getSheetNames</span></a> function.</p></li>
+<li><p><strong>data_list_columns</strong> (<em>list</em><em>(</em><em>)</em>) – The values of the columns, besides the first row which contains the column names. Can be retrieved using the <a class="reference internal" href="#excel-utilities-getdatalist"><span class="std std-ref">excel_utilities.getDataList</span></a> function.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -338,10 +366,37 @@ retrieve column names using the <a class="reference internal" href="#excel-utili
 </dl>
 </dd></dl>
 
-<span class="target" id="graph-creator-func"><span id="stats-proc-stat-mode"></span></span><dl class="py function">
+</section>
+<section id="stats-proc-stat-mode">
+<h2>stats_proc.stat_mode<a class="headerlink" href="#stats-proc-stat-mode" title="Permalink to this heading">#</a></h2>
+<span class="target" id="id6"></span><dl class="py function">
+<dt class="sig sig-object py" id="stats_proc.stat_mode">
+<span class="sig-prename descclassname"><span class="pre">stats_proc.</span></span><span class="sig-name descname"><span class="pre">stat_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columnName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_list_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stats_proc.stat_mode" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the statistical mode of a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columnName</strong> (<em>str</em>) – The name of the column of which the function computes the mode.</p></li>
+<li><p><strong>col_names</strong> (<em>tuple</em><em>(</em><em>str</em><em>)</em>) – The name of each column. Can be retrived using the <a class="reference internal" href="#excel-utilities-getsheetnames"><span class="std std-ref">excel_utilities.getSheetNames</span></a> function.</p></li>
+<li><p><strong>data_list_columns</strong> (<em>list</em><em>(</em><em>)</em>) – The values of the columns, besides the first row which contains the column names. Can be retrieved using the <a class="reference internal" href="#excel-utilities-getdatalist"><span class="std std-ref">excel_utilities.getDataList</span></a> function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the mode of a column.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="graph-creator-func">
+<h2>graph_creator_func<a class="headerlink" href="#graph-creator-func" title="Permalink to this heading">#</a></h2>
+<span class="target" id="id7"></span><dl class="py function">
 <dt class="sig sig-object py" id="graph_creator_func">
 <span class="sig-name descname"><span class="pre">graph_creator_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#graph_creator_func" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns a number of histograms, one for each value retrieved by the <a class="reference internal" href="#excel_utilities.getSheetNames" title="excel_utilities.getSheetNames"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getSheetNames()</span></code></a> function.
+<dd><p>Returns a number of histograms, one for each value retrieved by the <a class="reference internal" href="#excel-utilities-getsheetnames"><span class="std std-ref">excel_utilities.getSheetNames</span></a> function.
 The Y-axis is the range of the values accordingly.</p>
 </dd></dl>
 
@@ -353,7 +408,15 @@ The Y-axis is the range of the values accordingly.</p>
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="tutorial.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">&lt;no title&gt;</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="usage.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -401,6 +464,10 @@ The Y-axis is the range of the values accordingly.</p>
 <li><a class="reference internal" href="#excel-utilities-getsheetnames">excel_utilities.getSheetNames</a></li>
 <li><a class="reference internal" href="#excel-utilities-getdatalist">excel_utilities.getDataList</a></li>
 <li><a class="reference internal" href="#excel-utilities-getdatadict">excel_utilities.getDataDict</a></li>
+<li><a class="reference internal" href="#stats-proc-arithmean-col">stats_proc.arithMean_col</a></li>
+<li><a class="reference internal" href="#stats-proc-median">stats_proc.median</a></li>
+<li><a class="reference internal" href="#stats-proc-stat-mode">stats_proc.stat_mode</a></li>
+<li><a class="reference internal" href="#graph-creator-func">graph_creator_func</a></li>
 </ul>
 </li>
 </ul>

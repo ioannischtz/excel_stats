@@ -1,13 +1,29 @@
 Reference
 =========
 
+.. _excel_utilities.getExcelSheet:
+
+.. py:function:: excel_utilities.getExcelSheet(inputfile)
+    
+    Retrieves data from an excel file
+
+    :param inputfile: The excel file you want to retriece data from.
+    :return: sheet
+    :rtype: <class 'openpyxl.worksheet.worksheet.Worksheet'>
+
+.. note::
+
+    The getExcelSheet function is used to retrieve data form an excel file. In order to do so, the 
+    `openpyxl library <https://openpyxl.readthedocs.io>`_ is used!
+
+
 .. _excel_utilities.getSheetNames:
 
 excel_utilities.getSheetNames
 -----------------------------
 
 To retrieve a tuple containting the column names (default, use b_rows=True to retrieve the row names instead) 
-of the specified excel spreadsheet you can use the ``excel_utilities.getSheetNames()`` function:
+of the specified excel spreadsheet you can use the excel_utilities.getSheetNames function:
 
 .. py:function::  excel_utilities.getSheetNames(sheet, b_rows=False)
 
@@ -21,7 +37,7 @@ of the specified excel spreadsheet you can use the ``excel_utilities.getSheetNam
     :return: The column names tuple.
     :rtype: tuple(str)
 
-| The sheet parameter should be retrieved using the excel_utilities.getExcelSheet().
+| The sheet parameter should be retrieved using the :ref:`excel_utilities.getExcelSheet <excel_utilities.getExcelSheet>`.
 | Otherwise, :py:func:`excel_utilities.getSheetNames` will raise an exception.
 
 .. py:exception:: excel_utilities.InvalidSheetError
@@ -56,7 +72,7 @@ of each column (default, use b_rows=True to retrieve values of rows instead).
     :return: A list of lists
     :rtype: list()
 
-| The sheet parameter should be retrieved using the excel_utilities.getExcelSheet().
+| The sheet parameter should be retrieved using the :ref:`excel_utilities.getExcelSheet <excel_utilities.getExcelSheet>`.
 | Otherwise, :py:func:`excel_utilities.getDataList <excel_utilities.getDataList>` will raise an exception.
 
 .. _excel_utilities.getDataDict:
@@ -80,6 +96,9 @@ To retrieve a dictionary, where keys are the names of each column and the values
     :return: A dictionary
     :rtype: dict
 
+stats_proc.arithMean_col
+------------------------
+
 .. _stats_proc.arithMean_col:
 
 .. py:function:: stats_proc.arithMean_col(columnName, col_names, data_list_columns)
@@ -95,6 +114,9 @@ To retrieve a dictionary, where keys are the names of each column and the values
     :return: The value of the arithmetic mean of a column.
     :rtype: float
 
+stats_proc.median
+-----------------
+
 .. _stats_proc.median:
 
 .. py:function:: stats_proc.median(columnName, col_names, data_list_columns)
@@ -103,31 +125,38 @@ To retrieve a dictionary, where keys are the names of each column and the values
 
     :param columnName: The name of the column of which the function computes the median.
     :type columnName: str
-    :param col_names: The name of each column. Can be retrived using the :py:func:`excel_utilities.getSheetNames` function.
+    :param col_names: The name of each column. Can be retrived using the :ref:`excel_utilities.getSheetNames <excel_utilities.getSheetNames>` function.
     :type col_names: tuple(str)
-    :param data_list_columns: The values of the columns, besides the first row which contains the column names. Can be retrieved using the :py:func:`excel_utilities.getDataList` function.
+    :param data_list_columns: The values of the columns, besides the first row which contains the column names. Can be retrieved using the :ref:`excel_utilities.getDataList <excel_utilities.getDataList>` function.
     :type data_list_columns: list()
     :return: The value of the median of a column.
     :rtype: float
 
+stats_proc.stat_mode
+--------------------
+
 .. _stats_proc.stat_mode:
 
-.. py:funtion:: stats_proc.stat_mode(columnName, col_names, data_list_columns)
+.. py:function:: stats_proc.stat_mode(columnName, col_names, data_list_columns)
 
     Return the statistical mode of a list
 
     :param columnName: The name of the column of which the function computes the mode.
     :type columnName: str
-    :param col_names: The name of each column. Can be retrived using the :py:func:`excel_utilities.getSheetNames` function.
+    :param col_names: The name of each column. Can be retrived using the :ref:`excel_utilities.getSheetNames <excel_utilities.getSheetNames>` function.
     :type col_names: tuple(str)
-    :param data_list_columns: The values of the columns, besides the first row which contains the column names. Can be retrieved using the :py:func:`excel_utilities.getDataList` function.
+    :param data_list_columns: The values of the columns, besides the first row which contains the column names. Can be retrieved using the :ref:`excel_utilities.getDataList <excel_utilities.getDataList>` function.
     :type data_list_columns: list()
     :return: The value of the mode of a column.
     :rtype: float
+
+
+graph_creator_func
+------------------
 
 .. _graph_creator_func:
 
 .. py:function:: graph_creator_func(inputfile)
 
-    Returns a number of histograms, one for each value retrieved by the :py:func:`excel_utilities.getSheetNames` function. 
+    Returns a number of histograms, one for each value retrieved by the :ref:`excel_utilities.getSheetNames <excel_utilities.getSheetNames>` function. 
     The Y-axis is the range of the values accordingly.
