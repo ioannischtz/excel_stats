@@ -45,5 +45,5 @@ space empty. For this example we will have a plot that looks like this:
 The Plot
 --------
 
-The third and final stage, :ref:`Graph_creator_func <graph_creator_func>` generates the plot or many subplots, depending on the 
+The third and final stage, :ref:`Graph_creator_func <graph_creator_func>` generates one plot or many subplots, depending on the 
 situation, as shown on the pictures above! 
