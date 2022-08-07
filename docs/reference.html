@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference &mdash; EXCEL_STATS 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> EXCEL_STATS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#excel-utilities-getsheetnames">excel_utilities.getSheetNames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#excel-utilities-getdatalist">excel_utilities.getDataList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#excel-utilities-getdatadict">excel_utilities.getDataDict</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stats-proc-arithmean-col">stats_proc.arithMean_col</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stats-proc-median">stats_proc.median</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stats-proc-stat-mode">stats_proc.stat_mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graph-creator-func">graph_creator_func</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EXCEL_STATS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/reference.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this heading"></a></h1>
+<span class="target" id="excel-utilities-getexcelsheet"></span><dl class="py function">
+<dt class="sig sig-object py" id="excel_utilities.getExcelSheet">
+<span class="sig-prename descclassname"><span class="pre">excel_utilities.</span></span><span class="sig-name descname"><span class="pre">getExcelSheet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#excel_utilities.getExcelSheet" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves data from an excel file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputfile</strong> – The excel file you want to retriece data from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sheet</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>&lt;class ‘openpyxl.worksheet.worksheet.Worksheet’&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The getExcelSheet function is used to retrieve data form an excel file. In order to do so, the
+<a class="reference external" href="https://openpyxl.readthedocs.io">openpyxl library</a> is used!</p>
+</div>
+<section id="excel-utilities-getsheetnames">
+<span id="id1"></span><h2>excel_utilities.getSheetNames<a class="headerlink" href="#excel-utilities-getsheetnames" title="Permalink to this heading"></a></h2>
+<p>To retrieve a tuple containting the column names (default, use b_rows=True to retrieve the row names instead)
+of the specified excel spreadsheet you can use the excel_utilities.getSheetNames function:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="excel_utilities.getSheetNames">
+<span class="sig-prename descclassname"><span class="pre">excel_utilities.</span></span><span class="sig-name descname"><span class="pre">getSheetNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#excel_utilities.getSheetNames" title="Permalink to this definition"></a></dt>
+<dd><p>Return a tuple of column names as strings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sheet</strong> (<em>&lt;class 'openpyxl.worksheet.worksheet.Worksheet'&gt;</em>) – Required excel spreadsheet.</p></li>
+<li><p><strong>b_rows</strong> (<em>Boolean</em>) – Optional, set to True in order to return row names instead.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#excel_utilities.InvalidSheetError" title="excel_utilities.InvalidSheetError"><strong>excel_utilities.InvalidSheetError</strong></a> – If the sheet argument is an invalid type.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The column names tuple.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line">The sheet parameter should be retrieved using the <a class="reference internal" href="#excel-utilities-getexcelsheet"><span class="std std-ref">excel_utilities.getExcelSheet</span></a>.</div>
+<div class="line">Otherwise, <a class="reference internal" href="#excel_utilities.getSheetNames" title="excel_utilities.getSheetNames"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getSheetNames()</span></code></a> will raise an exception.</div>
+</div>
+<dl class="py exception">
+<dt class="sig sig-object py" id="excel_utilities.InvalidSheetError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">excel_utilities.</span></span><span class="sig-name descname"><span class="pre">InvalidSheetError</span></span><a class="headerlink" href="#excel_utilities.InvalidSheetError" title="Permalink to this definition"></a></dt>
+<dd><p>Raised if the sheet argument is an invalid type.
+<em>openpyxl does not support  file format, please check you can open it with Excel first.
+Supported formats are: .xlsx,.xlsm,.xltx,.xltm</em></p>
+</dd></dl>
+
+</section>
+<section id="excel-utilities-getdatalist">
+<span id="id2"></span><h2>excel_utilities.getDataList<a class="headerlink" href="#excel-utilities-getdatalist" title="Permalink to this heading"></a></h2>
+<p>To etrieve a list of lists. Each sublist containts the values, provided by the specified excel spreadsheet,
+of each column (default, use b_rows=True to retrieve values of rows instead).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first value of each column is scipped due to being the column name. You can
+retrieve column names using the <a class="reference internal" href="#excel-utilities-getsheetnames"><span class="std std-ref">excel_utilities.getSheetNames</span></a> function.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="excel_utilities.getDataList">
+<span class="sig-prename descclassname"><span class="pre">excel_utilities.</span></span><span class="sig-name descname"><span class="pre">getDataList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#excel_utilities.getDataList" title="Permalink to this definition"></a></dt>
+<dd><p>Return a list of columns</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sheet</strong> (<em>&lt;class 'openpyxl.worksheet.worksheet.Worksheet'&gt;</em>) – Required excel spreadsheet.</p></li>
+<li><p><strong>b_rows</strong> (<em>Boolean</em>) – Optional, set to True in order to retrieve lists of rows instead of columns.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#excel_utilities.InvalidSheetError" title="excel_utilities.InvalidSheetError"><strong>excel_utilities.InvalidSheetError</strong></a> – If the sheet argument is an invalid type.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of lists</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="line-block">
+<div class="line">The sheet parameter should be retrieved using the <a class="reference internal" href="#excel-utilities-getexcelsheet"><span class="std std-ref">excel_utilities.getExcelSheet</span></a>.</div>
+<div class="line">Otherwise, <a class="reference internal" href="#excel_utilities.getDataList" title="excel_utilities.getDataList"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getDataList</span></code></a> will raise an exception.</div>
+</div>
+</section>
+<section id="excel-utilities-getdatadict">
+<span id="id3"></span><h2>excel_utilities.getDataDict<a class="headerlink" href="#excel-utilities-getdatadict" title="Permalink to this heading"></a></h2>
+<p>To retrieve a dictionary, where keys are the names of each column and the values are the values of that column.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="getDataDict">
+<span class="sig-name descname"><span class="pre">getDataDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sheet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_list_row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getDataDict" title="Permalink to this definition"></a></dt>
+<dd><p>Return the values of the specified excel spreadsheet as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sheet</strong> (<em>&lt;class 'openpyxl.worksheet.worksheet.Worksheet'&gt;</em>) – Required excel spreadsheet.</p></li>
+<li><p><strong>col_names</strong> (<em>tuple</em><em>(</em><em>str</em><em>)</em>) – The name of each column that will be set as keys in the dictionary. Can be retrived using the <a class="reference internal" href="#excel_utilities.getSheetNames" title="excel_utilities.getSheetNames"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getSheetNames()</span></code></a> function.</p></li>
+<li><p><strong>data_list_row</strong> (<em>list</em><em>(</em><em>)</em>) – The values of the columns, besides the first row which contains the column names. Can be retrieved using the <a class="reference internal" href="#excel_utilities.getDataList" title="excel_utilities.getDataList"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getDataList()</span></code></a> function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#excel_utilities.InvalidSheetError" title="excel_utilities.InvalidSheetError"><strong>excel_utilities.InvalidSheetError</strong></a> – If the sheet argument is an invalid type.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="stats-proc-arithmean-col">
+<h2>stats_proc.arithMean_col<a class="headerlink" href="#stats-proc-arithmean-col" title="Permalink to this heading"></a></h2>
+<span class="target" id="id4"></span><dl class="py function">
+<dt class="sig sig-object py" id="stats_proc.arithMean_col">
+<span class="sig-prename descclassname"><span class="pre">stats_proc.</span></span><span class="sig-name descname"><span class="pre">arithMean_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columnName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_list_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stats_proc.arithMean_col" title="Permalink to this definition"></a></dt>
+<dd><p>Return the arithmetic of a list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columnName</strong> (<em>str</em>) – The name of the column of which the function computes the arithmetic mean.</p></li>
+<li><p><strong>col_names</strong> (<em>tuple</em><em>(</em><em>str</em><em>)</em>) – The name of each column. Can be retrived using the <a class="reference internal" href="#excel_utilities.getSheetNames" title="excel_utilities.getSheetNames"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getSheetNames()</span></code></a> function.</p></li>
+<li><p><strong>data_list_columns</strong> (<em>list</em><em>(</em><em>)</em>) – The values of the columns, besides the first row which contains the column names. Can be retrieved using the <a class="reference internal" href="#excel_utilities.getDataList" title="excel_utilities.getDataList"><code class="xref py py-func docutils literal notranslate"><span class="pre">excel_utilities.getDataList()</span></code></a> function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the arithmetic mean of a column.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="stats-proc-median">
+<h2>stats_proc.median<a class="headerlink" href="#stats-proc-median" title="Permalink to this heading"></a></h2>
+<span class="target" id="id5"></span><dl class="py function">
+<dt class="sig sig-object py" id="stats_proc.median">
+<span class="sig-prename descclassname"><span class="pre">stats_proc.</span></span><span class="sig-name descname"><span class="pre">median</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columnName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_list_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stats_proc.median" title="Permalink to this definition"></a></dt>
+<dd><p>Return the median of a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columnName</strong> (<em>str</em>) – The name of the column of which the function computes the median.</p></li>
+<li><p><strong>col_names</strong> (<em>tuple</em><em>(</em><em>str</em><em>)</em>) – The name of each column. Can be retrived using the <a class="reference internal" href="#excel-utilities-getsheetnames"><span class="std std-ref">excel_utilities.getSheetNames</span></a> function.</p></li>
+<li><p><strong>data_list_columns</strong> (<em>list</em><em>(</em><em>)</em>) – The values of the columns, besides the first row which contains the column names. Can be retrieved using the <a class="reference internal" href="#excel-utilities-getdatalist"><span class="std std-ref">excel_utilities.getDataList</span></a> function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the median of a column.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="stats-proc-stat-mode">
+<h2>stats_proc.stat_mode<a class="headerlink" href="#stats-proc-stat-mode" title="Permalink to this heading"></a></h2>
+<span class="target" id="id6"></span><dl class="py function">
+<dt class="sig sig-object py" id="stats_proc.stat_mode">
+<span class="sig-prename descclassname"><span class="pre">stats_proc.</span></span><span class="sig-name descname"><span class="pre">stat_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columnName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_list_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stats_proc.stat_mode" title="Permalink to this definition"></a></dt>
+<dd><p>Return the statistical mode of a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>columnName</strong> (<em>str</em>) – The name of the column of which the function computes the mode.</p></li>
+<li><p><strong>col_names</strong> (<em>tuple</em><em>(</em><em>str</em><em>)</em>) – The name of each column. Can be retrived using the <a class="reference internal" href="#excel-utilities-getsheetnames"><span class="std std-ref">excel_utilities.getSheetNames</span></a> function.</p></li>
+<li><p><strong>data_list_columns</strong> (<em>list</em><em>(</em><em>)</em>) – The values of the columns, besides the first row which contains the column names. Can be retrieved using the <a class="reference internal" href="#excel-utilities-getdatalist"><span class="std std-ref">excel_utilities.getDataList</span></a> function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the mode of a column.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="graph-creator-func">
+<h2>graph_creator_func<a class="headerlink" href="#graph-creator-func" title="Permalink to this heading"></a></h2>
+<span class="target" id="id7"></span><dl class="py function">
+<dt class="sig sig-object py" id="graph_creator_func">
+<span class="sig-name descname"><span class="pre">graph_creator_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inputfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#graph_creator_func" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a number of histograms, one for each value retrieved by the <a class="reference internal" href="#excel-utilities-getsheetnames"><span class="std std-ref">excel_utilities.getSheetNames</span></a> function.
+The Y-axis is the range of the values accordingly.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, GeorgeGkip, ioannischtz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
