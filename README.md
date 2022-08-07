@@ -1,8 +1,9 @@
 TODO:
 
 - [x] setup project structure
-- [ ] Open excel(or csv) sheet
-- [ ] Create a basic statistical analysis library
-- [ ] Use the matplotlib library for visualization
-- [ ] Save the statistical analysis to an excel (or csv file)
+- [x] Open excel(or csv) sheet
+- [x] Create a basic statistical analysis library
+- [x] Use the matplotlib library for visualization
+- [x] Clean-up / Code-refactor
+- [ ] Write documentation using Sphinx
 
